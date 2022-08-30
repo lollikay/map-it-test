@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const fs = require("fs");
 
 const pages =
@@ -24,7 +25,6 @@ module.exports = (env, options) => ({
       },
       {
         test: /\.(pcss|css)$/i,
-        include: path.resolve(__dirname, 'src/styles'),
         use: [
           {
             loader: 'style-loader'
@@ -66,6 +66,18 @@ module.exports = (env, options) => ({
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src/pages", "index.html"),
     }),
+    // new CopyPlugin({
+    //   patterns: [
+    //     {
+    //       from: "src/json",
+    //       to: "public/json"
+    //     },
+    //     {
+    //       from: "src/icons",
+    //       to: "public/icons"
+    //     }
+    //   ]
+    // }),
   ].filter(n => n),
   resolve: {
     extensions: ['*', '.js', '.jsx'],

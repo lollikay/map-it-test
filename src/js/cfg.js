@@ -1,0 +1,1 @@
+export const productsUrl = "/json/products.json";

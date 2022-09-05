@@ -1,0 +1,37 @@
+.btn {
+  --width: auto;
+  --minHeight: var(--inputHeight);
+  --padding: 0.5em 1em;
+  --textSize: inherit;
+  --textWeight: inherit;
+  --textTransform: uppercase;
+  --border: 2px solid var(--c-border);
+  --c-bg: var(--c-theme);
+  --c-border: var(--c-bg);
+  --c-text: var(--c-light);
+  --c-bg-hover: var(--c-dark);
+  --c-border-hover: var(--c-bg-hover);
+  --c-text-hover: var(--c-light);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--width);
+  min-height: var(--minHeight);
+  padding: var(--padding);
+  font-size: var(--textSize);
+  font-weight: var(--textWeight);
+  text-transform: var(--textTransform);
+  text-decoration: none;
+  background: var(--c-bg);
+  border: var(--border);
+  color: var(--c-text);
+  cursor: pointer;
+  transition: background-color 0.4s, border-color 0.4s, color 0.4s;
+
+  &:hover {
+    background-color: var(--c-bg-hover);
+    border-color: var(--c-border-hover);
+    color: var(--c-text-hover);
+  }
+}

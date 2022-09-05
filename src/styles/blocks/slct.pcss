@@ -1,0 +1,20 @@
+.slct {
+  display: block;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    width: 6px;
+    height: 6px;
+    border: solid currentColor;
+    border-width: 2px 2px 0 0;
+    transform: translateY(-50%) rotate(135deg);
+  }
+
+  select {
+    padding-right: 2em;
+  }
+}

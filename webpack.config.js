@@ -42,14 +42,17 @@ module.exports = (env, options) => ({
           },
         ]
       },
-      {
-        test: /\.(png|jpg|jpeg)/,
-        type: 'asset/resource',
-        generator: {
-          // output filename for images
-          filename: '/images/[name][ext]',
-        },
-      },
+      // {
+      //   test: /\.html$/,
+      //   loader: 'html-loader'
+      // },
+      // {
+      //   test: /\.(png|jpg|gif|svg|jpeg)/,
+      //   type: 'asset/resource',
+      //   generator: {
+      //     filename: "images/[name][ext]"
+      //   }
+      // },
       {
         test: /\.ico/,
         type: 'asset/resource',
@@ -66,18 +69,22 @@ module.exports = (env, options) => ({
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src/pages", "index.html"),
     }),
-    // new CopyPlugin({
-    //   patterns: [
-    //     {
-    //       from: "src/json",
-    //       to: "public/json"
-    //     },
-    //     {
-    //       from: "src/icons",
-    //       to: "public/icons"
-    //     }
-    //   ]
-    // }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "./src/json"),
+          to: path.resolve(__dirname, './public/json')
+        },
+        {
+          from: path.resolve(__dirname, "./src/images"),
+          to: path.resolve(__dirname, './public/images')
+        }
+        // {
+        //   from: "src/icons",
+        //   to: "public/icons"
+        // }
+      ]
+    }),
   ].filter(n => n),
   resolve: {
     extensions: ['*', '.js', '.jsx'],
@@ -85,7 +92,7 @@ module.exports = (env, options) => ({
   output: {
     path: path.resolve(__dirname, './public'),
     publicPath: '/',
-    filename: '[name].js',
+    filename: '[name].js'
   },
   devServer: {
     watchFiles: ['src/**'],

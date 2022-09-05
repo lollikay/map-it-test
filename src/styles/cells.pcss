@@ -1,0 +1,36 @@
+.cells {
+  --cellGutterX: 1rem;
+  --cellGutterY: calc(var(--cellGutterX) * 2);
+  --cellBasis: 100%;
+  --cellMaxWidth: 100%;
+  --cellGrow: 0;
+  --cellShrink: 0;
+
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--cellGutterX) * -1);
+  padding: 0;
+
+  &:last-child {
+    margin-bottom: calc(var(--cellGutterY) * -1);
+  }
+
+  &--auto {
+    --cellBasis: auto;
+  }
+
+  &--2 {
+    @media (min-width: 576px) {
+      --cellBasis: 50%;
+      --cellMaxWidth: 50%;
+    }
+  }
+}
+
+.cell {
+  flex: var(--cellGrow) var(--cellShrink) var(--cellBasis);
+  max-width: var(--cellMaxWidth);
+  padding: 0 var(--cellGutterX);
+  margin: 0 0 var(--cellGutterY);
+}

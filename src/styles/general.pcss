@@ -5,8 +5,62 @@
 }
 
 body {
+  font-family: var(--fontFamily);
+  line-height: var(--lineHeight);
   background: var(--c-bg);
   color: var(--c-text);
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--c-theme);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+select {
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  width: 100%;
+  max-width: 100%; /* useful when width is set to anything other than 100% */
+  margin: 0;
+  border: 1px solid var(--c-neutral-2);
+  box-shadow: none;
+  background: #fff;
+
+  &:hover {
+    border-color: var(--c-neutral-1);
+  }
+
+  option {
+    font-weight: normal;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0 2rem 0 0;
+    padding: 0;
+  }
 }
 
 .container {

@@ -48,6 +48,14 @@ export default function App() {
                 <li className="primary-nav__item">
                   <NavLink
                     className={`primary-nav__link`}
+                    to="/"
+                  >
+                    {getLocaleMsg("HOME", lang)}
+                  </NavLink>
+                </li>
+                <li className="primary-nav__item">
+                  <NavLink
+                    className={`primary-nav__link`}
                     to="/products"
                   >
                     {getLocaleMsg("CATALOG", lang)}

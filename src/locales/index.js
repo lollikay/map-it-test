@@ -39,6 +39,10 @@ export const locales = {
     DELETE_PRODUCT: {
       en: "Delete product",
       ru: "Удалить товар"
+    },
+    HOME: {
+      en: "Home",
+      ru: "Главная"
     }
   },
   detailed: {
@@ -85,6 +89,10 @@ export const locales = {
     REMARKS: {
       en: "Remarks",
       ru: "Примечания"
+    },
+    DELETE_IMAGE: {
+      en: "Delete image",
+      ru: "Удалить изображение"
     }
   },
   forms: {

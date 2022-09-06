@@ -6,6 +6,7 @@
   --textWeight: inherit;
   --textTransform: uppercase;
   --border: 2px solid var(--c-border);
+  --borderRadius: 0;
   --c-bg: var(--c-theme);
   --c-border: var(--c-bg);
   --c-text: var(--c-light);
@@ -25,9 +26,21 @@
   text-decoration: none;
   background: var(--c-bg);
   border: var(--border);
+  border-radius: var(--borderRadius);
   color: var(--c-text);
   cursor: pointer;
   transition: background-color 0.4s, border-color 0.4s, color 0.4s;
+
+  &--icon {
+    --width: var(--inputHeight);
+    --minHeight: var(--width);
+    --padding: 0.5rem;
+    --borderRadius: 50%;
+  }
+
+  &--close {
+
+  }
 
   &:hover {
     background-color: var(--c-bg-hover);

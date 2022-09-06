@@ -1,6 +1,6 @@
 import "./style.pcss";
 
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {getByPropFromObj} from "../../js/utils/getByPropFromObj";
 import DataContext from "../../js/context";
 import {getLocaleMsg} from "../../js/utils/getLocaleMsg";
@@ -11,6 +11,7 @@ import FileUpload from "../file-upload";
 
 const ProductDetailed = (props) => {
   const {product = {}, updater} = props;
+  const [imagePath, setImagePath] = useState(product.imagePath || "");
   const {lang, products, setProducts} = useContext(DataContext);
   let navigate = useNavigate();
 
@@ -46,9 +47,15 @@ const ProductDetailed = (props) => {
 
   const addProductImage = (files) => {
     // console.debug(files);
+    const path = "/images/" + files[0].name;
+    setImagePath(path)
     updater({
-      imagePath: "/images/" + files[0].name
+      imagePath: path
     });
+  }
+
+  const handleDeleteImage = (e) => {
+    setImagePath("");
   }
 
   return (
@@ -57,13 +64,22 @@ const ProductDetailed = (props) => {
           <div className="cell product-detailed__image-col">
             <div className="product-detailed__image">
               {
-                product.imagePath &&
-                <img src={product.imagePath} alt={product.title}
-                     width="500" height="500" loading="lazy"
-                />
+                imagePath &&
+                <>
+                  <img src={imagePath} alt={product.title}
+                       width="500" height="500" loading="lazy"
+                  />
+                  <button
+                    className="btn btn--icon btn--close"
+                    title={getLocaleMsg("DELETE_IMAGE", lang)}
+                    onClick={handleDeleteImage}
+                  >
+                    <span className="icon-x"></span>
+                  </button>
+                </>
               }
               {
-                !product.imagePath &&
+                !imagePath &&
                 <FileUpload
                   required={true}
                   onUpload={addProductImage}

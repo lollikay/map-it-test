@@ -10,7 +10,7 @@ export const LangSwitch = (props) => {
       value: "en"
     },
     {
-      name: "Russian",
+      name: "Русский",
       value: "ru"
     }
   ]

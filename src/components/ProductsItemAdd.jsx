@@ -16,7 +16,7 @@ export const ProductsItemAdd = (props) => {
       "isSale": false,
       "inStock": true,
       "isPurchased": false,
-      "barcode": "",
+      "barcode": "0000",
       "manageItemBy": 1,
       "minimumInventory": 1.0,
       "maximumInventory": 10.00,

@@ -27,6 +27,18 @@ export const locales = {
     ADD_PRODUCT: {
       en: "Add new product",
       ru: "Добавить товар"
+    },
+    TITLE: {
+      en: "Title",
+      ru: "Наименование"
+    },
+    SAVE: {
+      en: "Save changes",
+      ru: "Сохранить изменения"
+    },
+    DELETE_PRODUCT: {
+      en: "Delete product",
+      ru: "Удалить товар"
     }
   },
   detailed: {
@@ -73,6 +85,16 @@ export const locales = {
     REMARKS: {
       en: "Remarks",
       ru: "Примечания"
+    }
+  },
+  forms: {
+    EMPTY: {
+      en: "Cannot be empty",
+      ru: "Поле не может быть пустым"
+    },
+    FILE_UPLOAD: {
+      en: "Upload file",
+      ru: "Загрузить файл"
     }
   }
 }

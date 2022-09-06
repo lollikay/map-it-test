@@ -6,7 +6,7 @@ const Select = (props) => {
   return (
     <span className="slct">
       <select className={`form__input ${className}`}
-        onChange={changeHandler}
+        onChange={(e) => changeHandler(e.target)}
         defaultValue={defaultValue}
         name={name}
         {...extra}

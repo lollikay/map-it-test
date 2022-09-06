@@ -16,6 +16,16 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    &.is-invalid {
+      .form__input {
+        --c-border: var(--c-error);
+      }
+
+      .form__message {
+        color: var(--c-error);
+      }
+    }
   }
 
   &__label {
@@ -38,6 +48,11 @@
     background-color: var(--c-bg);
     border: var(--border);
     color: var(--c-text);
+  }
+
+  &__message {
+    display: block;
+    margin-top: 0.25rem;
   }
 }
 
